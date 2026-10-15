@@ -1,0 +1,40 @@
+
+set basis vectors and kappa
+    test_basis = [[int], [int], [int]]
+
+    kappa = float
+    real_basis = {some function of kappa}
+
+n states psi 
+    psi_s = test_basis #for now
+    n = len(psi_s)
+    
+
+expectation_vals_N(psi_s, n )
+    zed = 2
+    r_0 = 0.52917*10**(-10) #meters
+    lambda = zed /(kappa * r_0)
+    
+    mat_N = [0]*n for _ in range(n)
+
+    for i in range(n): #this will give the number of rows
+        for j in range(n):  # this will give the number of cols
+            J = psi_s[i][0] + psi_s[j][0]
+            K = psi_s[i][1] + psi_s[j][1]
+            M = psi_s[i][2] + psi_s[j][2]
+
+            factorial = np.factorial((J + K + L +5), exact = True) 
+            #if this needs to be faster, set exact to be false
+            wavelength = (2*lambda)**(-(J+K+M+6))
+            coeff = (2*(np.pi())**2) / (M+2)
+
+            fraction_sum = (1/(K+1) - 1/(K+3) - 1/(K+M+3) + 1/(K+M+5))
+
+            entry_value_N = factorial * coeff * wavelength * fraction_sum
+
+
+
+            mat_N[i][j] = entry_value_N
+
+
+
