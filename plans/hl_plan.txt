@@ -2,26 +2,26 @@ Plan:
 
 programme obtain_energy
 
-generate dummy basis vectors #doesn't require a function, 
-just define simple ones (one basis to begin with)
+    generate dummy basis vectors #doesn't require a function, 
+    just define simple ones (one basis to begin with)
 
-#generate actual basis vectors(function0 : this is where 
-kappa can be varied), don't worry about this until rest of code is working
+    #generate actual basis vectors(function0 : this is where 
+    kappa can be varied), don't worry about this until rest of code is working
 
-generate n states psi
-
-
-calculate_N (function 1: finding the expectation values {uses array of psis as inputs}
-             function 2: constructing the matrix from these values {takes the output of function1 as inputs} ) 
+    generate n states psi
 
 
-find eigenvalues of N (function 3: eigenvalue finder)
+    calculate_N (function 1: finding the expectation values {uses array of psis as inputs}
+                 function 2: constructing the matrix from these values {takes the output of function1 as inputs} ) 
 
-find eigenvectors of N (function 4: eigenvector finder)
 
-construct beta (function 5: constructing a diagonal matrix from the eigenvalues found by function 3)
+    find eigenvalues of N (function 3: eigenvalue finder)
 
-calculate beta ± 1/2 (function 6: raising a diagonal matrix to a given power {matrix output of function 4 and power are inputs})
+    find eigenvectors of N (function 4: eigenvector finder)
+
+    construct beta (function 5: constructing a diagonal matrix from the eigenvalues found by function 3)
+
+    calculate beta ± 1/2 (function 6: raising a diagonal matrix to a given power {matrix output of function 4 and power are inputs})
 
 construct Y_T (function7: constructing a matrix from a set of arrays)
 construct Y (function 8: taking the transpose of matrix output of function 7)
@@ -32,7 +32,7 @@ print(all matrix dimensions)
 
 construct C (function 9: expectation values + function2) 
 construct T (function 10: expectation values + function 2)
-construct W (fucntion 11: expectation values + function 2)
+construct W (function 11: expectation values + function 2)
 
 print(all matrix dimensions)
 

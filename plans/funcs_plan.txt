@@ -10,10 +10,23 @@ n states psi
     n = len(psi_s)
     
 
-expectation_vals_N(psi_s, n )
+expectation_N_value(J,K, M, kappa )
     zed = 2
     r_0 = 0.52917*10**(-10) #meters
     lambda = zed /(kappa * r_0)
+
+    factorial = np.factorial((J + K + L +5), exact = True) 
+    #if this needs to be faster, set exact to be false
+    wavelength = (2*lambda)**(-(J+K+M+6))
+    coeff = (2*(np.pi())**2) / (M+2)
+
+    fraction_sum = (1/(K+1) - 1/(K+3) - 1/(K+M+3) + 1/(K+M+5))
+
+    entry_value_N = factorial * coeff * wavelength * fraction_sum
+
+    output entry_value_N
+
+generate_N(states,n )
     
     mat_N = [0]*n for _ in range(n)
 
@@ -23,18 +36,15 @@ expectation_vals_N(psi_s, n )
             K = psi_s[i][1] + psi_s[j][1]
             M = psi_s[i][2] + psi_s[j][2]
 
-            factorial = np.factorial((J + K + L +5), exact = True) 
-            #if this needs to be faster, set exact to be false
-            wavelength = (2*lambda)**(-(J+K+M+6))
-            coeff = (2*(np.pi())**2) / (M+2)
+            for even K 
+                mat_N[i][j] = output of expectation_N_value(J, K, M)
+            for odd K
+                mat_N[i][j] = 0 
+    
+    output mat_N
 
-            fraction_sum = (1/(K+1) - 1/(K+3) - 1/(K+M+3) + 1/(K+M+5))
+    print the shape of mat_N
 
-            entry_value_N = factorial * coeff * wavelength * fraction_sum
-
-
-
-            mat_N[i][j] = entry_value_N
 
 
 
