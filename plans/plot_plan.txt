@@ -1,0 +1,7 @@
+functions:
+
+generate_matrix(kappa, n, states): returns [N, W, C, T]
+generate_eig_mats(matrix_N, n): returns [diagonal matrix beta, matrix Y]
+raise_mat_to_power(matrix_beta, power): returns beta**power
+create_H(T, C, W): returns matrix_H
+find_energy(B_m, H, Y, YT): returns min(energies)

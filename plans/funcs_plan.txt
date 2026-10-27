@@ -48,3 +48,9 @@ generate_N(states,n )
 
 
 
+finding beta and Y
+
+eigenvalues and sorting
+
+values = sc.linalg.eig(matrix)[0]
+values.sort()
